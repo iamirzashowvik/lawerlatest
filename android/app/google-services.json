@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "758670210688",
+    "project_id": "lawer-8613e",
+    "storage_bucket": "lawer-8613e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:758670210688:android:1cf48fb0bfa87162f01865",
+        "android_client_info": {
+          "package_name": "com.service.lawer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "758670210688-r3aeeqkcfpg5j86mgnmm0461romrkual.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.service.lawer",
+            "certificate_hash": "d6b20518f6e9393e199aa23da20e0bf0fc3062bb"
+          }
+        },
+        {
+          "client_id": "758670210688-vsesfeq1t95qenhasr4gn9mov8unpu0f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFejz-OdDqZvTlvbvqCTzJFajPg8HTGo0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "758670210688-vsesfeq1t95qenhasr4gn9mov8unpu0f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
