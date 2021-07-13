@@ -3,6 +3,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:lawer/call.dart';
 import 'package:lawer/model/textformfield.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:path/path.dart' as path;
@@ -118,7 +119,16 @@ class _RoomState extends State<Room> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(floatingActionButton: GestureDetector(
+      onTap: () {
+        final callx = CallX();
+        callx.getLatlangfromSharedpref();
+      },
+      child: CircleAvatar(
+        backgroundColor: Colors.red,
+        child: Icon(Icons.call),
+      ),
+    ),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,

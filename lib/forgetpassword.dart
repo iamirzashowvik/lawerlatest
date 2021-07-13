@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:get/get.dart';
+import 'package:lawer/call.dart';
 import 'package:lawer/users/lawers/signin__lawer.dart';
 import 'package:lawer/users/people/SignInPeople.dart';
 
@@ -97,7 +98,16 @@ class _ForgetPasswordState extends State<ForgetPassword> {
   @override
   Widget build(BuildContext context) {
     return auth == true
-        ? Scaffold(
+        ? Scaffold(floatingActionButton: GestureDetector(
+      onTap: () {
+        final callx = CallX();
+        callx.getLatlangfromSharedpref();
+      },
+      child: CircleAvatar(
+        backgroundColor: Colors.red,
+        child: Icon(Icons.call),
+      ),
+    ),
             body: Center(
               child: Form(
                 key: _loginForm,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:lawer/call.dart';
 import 'package:lawer/forum/forum.dart';
 import 'package:lawer/laws/lawjson.dart';
 import 'package:lawer/laws/lawlists.dart';
@@ -34,7 +35,16 @@ class _HomeLawerState extends State<HomeLawer> {
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 3,
-      child: Scaffold(
+      child: Scaffold(floatingActionButton: GestureDetector(
+        onTap: () {
+          final callx = CallX();
+          callx.getLatlangfromSharedpref();
+        },
+        child: CircleAvatar(
+          backgroundColor: Colors.red,
+          child: Icon(Icons.call),
+        ),
+      ),
         appBar: AppBar(
           backgroundColor: Colors.red,
           bottom: TabBar(

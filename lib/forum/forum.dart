@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
+import 'package:lawer/call.dart';
 import 'package:lawer/forum/postDetails.dart';
 import 'package:lawer/model/textformfield.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -47,7 +48,16 @@ class _ForumState extends State<Forum> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(floatingActionButton: GestureDetector(
+      onTap: () {
+        final callx = CallX();
+        callx.getLatlangfromSharedpref();
+      },
+      child: CircleAvatar(
+        backgroundColor: Colors.red,
+        child: Icon(Icons.call),
+      ),
+    ),
       body: Column(
         children: [
           Form(

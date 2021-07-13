@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:lawer/call.dart';
 import 'package:path/path.dart' as path;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -97,7 +98,16 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
+      child: Scaffold(floatingActionButton: GestureDetector(
+        onTap: () {
+          final callx = CallX();
+          callx.getLatlangfromSharedpref();
+        },
+        child: CircleAvatar(
+          backgroundColor: Colors.red,
+          child: Icon(Icons.call),
+        ),
+      ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,

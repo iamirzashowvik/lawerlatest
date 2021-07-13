@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lawer/call.dart';
 import 'package:lawer/laws/lawjson.dart';
 
 class Lawlists extends StatefulWidget {
@@ -36,7 +37,16 @@ class _LawlistsState extends State<Lawlists> {
   @override
   Widget build(BuildContext context) {
     // ignore: missing_return
-    return Scaffold(
+    return Scaffold(floatingActionButton: GestureDetector(
+      onTap: () {
+        final callx = CallX();
+        callx.getLatlangfromSharedpref();
+      },
+      child: CircleAvatar(
+        backgroundColor: Colors.red,
+        child: Icon(Icons.call),
+      ),
+    ),
       body: items == null
           ? Center(child: CircularProgressIndicator())
           : ListView.builder(

@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:lawer/call.dart';
 import 'package:lawer/model/textformfield.dart';
 import 'package:lawer/users/lawers/signin__lawer.dart';
 import 'package:searchable_dropdown/searchable_dropdown.dart';
@@ -124,7 +125,16 @@ class _SignUpLawerState extends State<SignUpLawer> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
+      child: Scaffold(floatingActionButton: GestureDetector(
+        onTap: () {
+          final callx = CallX();
+          callx.getLatlangfromSharedpref();
+        },
+        child: CircleAvatar(
+          backgroundColor: Colors.red,
+          child: Icon(Icons.call),
+        ),
+      ),
         body: SingleChildScrollView(
           child: Form(
             key: _loginForm,

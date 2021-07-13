@@ -13,18 +13,13 @@ class UserSelection extends StatefulWidget {
 }
 
 class _UserSelectionState extends State<UserSelection> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: GestureDetector(
         onTap: () {
           final callx = CallX();
-          // double totalDistance = callx.calculateDistance(23.730727, 90.460339 ,23.727235, 90.460562);
-          //
-          // print(totalDistance);//in km
           callx.getLatlangfromSharedpref();
-
         },
         child: CircleAvatar(
           backgroundColor: Colors.red,

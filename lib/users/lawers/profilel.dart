@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:lawer/call.dart';
 import 'package:path/path.dart' as path;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -101,7 +102,16 @@ class _ProfileLawerState extends State<ProfileLawer> {
     return res == null
         ? Scaffold(body: Center(child: CircularProgressIndicator()))
         : SafeArea(
-            child: Scaffold(
+            child: Scaffold(floatingActionButton: GestureDetector(
+              onTap: () {
+                final callx = CallX();
+                callx.getLatlangfromSharedpref();
+              },
+              child: CircleAvatar(
+                backgroundColor: Colors.red,
+                child: Icon(Icons.call),
+              ),
+            ),
               appBar: AppBar(
                 backgroundColor: Colors.white,
                 elevation: 0,

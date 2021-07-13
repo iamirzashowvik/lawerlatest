@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:lawer/model/textformfield.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../call.dart';
+
 class LawerDetails extends StatefulWidget {
   final String lawerEmail;
   LawerDetails(this.lawerEmail);
@@ -57,7 +59,16 @@ class _LawerDetailsState extends State<LawerDetails> {
     return res == null
         ? Scaffold(body: Center(child: CircularProgressIndicator()))
         : SafeArea(
-            child: Scaffold(
+            child: Scaffold(floatingActionButton: GestureDetector(
+              onTap: () {
+                final callx = CallX();
+                callx.getLatlangfromSharedpref();
+              },
+              child: CircleAvatar(
+                backgroundColor: Colors.red,
+                child: Icon(Icons.call),
+              ),
+            ),
               body: SingleChildScrollView(
                 child: ConstrainedBox(
                   constraints: BoxConstraints(

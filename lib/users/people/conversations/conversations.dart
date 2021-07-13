@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:lawer/call.dart';
 import 'package:lawer/users/people/conversations/room.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -34,7 +35,16 @@ class _ConversationsState extends State<Conversations> {
   final fireStoreInstance = FirebaseFirestore.instance;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(floatingActionButton: GestureDetector(
+      onTap: () {
+        final callx = CallX();
+        callx.getLatlangfromSharedpref();
+      },
+      child: CircleAvatar(
+        backgroundColor: Colors.red,
+        child: Icon(Icons.call),
+      ),
+    ),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,

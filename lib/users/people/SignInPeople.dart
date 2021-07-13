@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lawer/call.dart';
 import 'package:lawer/forgetpassword.dart';
 import 'package:lawer/model/textformfield.dart';
 import 'package:lawer/users/lawers/home__lawer.dart';
@@ -47,7 +48,16 @@ class _SignInPeopleState extends State<SignInPeople> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
+      child: Scaffold(floatingActionButton: GestureDetector(
+        onTap: () {
+          final callx = CallX();
+          callx.getLatlangfromSharedpref();
+        },
+        child: CircleAvatar(
+          backgroundColor: Colors.red,
+          child: Icon(Icons.call),
+        ),
+      ),
         body: SingleChildScrollView(
           child: ConstrainedBox(
             constraints: BoxConstraints(
