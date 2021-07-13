@@ -176,7 +176,7 @@ class _ProfileState extends State<Profile> {
                                     });
                                   },
                                   child: Icon(
-                                    Icons.upload,
+                                    Icons.edit,
 //                                   .. color: Colors.blue,
                                   )),
                         )

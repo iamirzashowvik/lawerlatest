@@ -44,7 +44,10 @@ dependencies:
   wifi_info_plugin: ^1.1.5
   dropdown_formfield: ^0.1.3
   flutter_statusbarcolor: ^0.2.3
-  
+  access_settings_menu: ^0.0.1
+  geolocator: ^7.2.0+1
+  android_intent: ^2.0.2
+  url_launcher: ^6.0.9
   
 
 
